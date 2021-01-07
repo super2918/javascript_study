@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>window size</title>
+  <style>
+    
+  .tag {
+    display: inline-block;
+    border: 1px solid #000;
+    padding: 20px;
+  }
+
+  </style>
+</head>
+<body>
+  <h1>Window size</h1>
+  
+  <ul>
+    <li>window screen: 해상도 브라우저 포함 모니터의 해상도 사이즈</li>
+    <li>window outer: url tab 포함 전체적인 브라우저 사이즈</li>
+    <li>window inner: web 페이지 scrollbar 포함 사이즈</li>
+    <li>document.client: 문서 자체 사이즈 But, scroll 영역은 제외</li>
+  </ul>
+
+  <div class="tag">Window Size</div>
+
+  <script>
+    const tag = document.querySelector('.tag');
+
+  
+  // window가 'resize'가 될때 마다 콜백 함수를 실행해줘 Update 함수 
+  function updateTag () {
+    tag.innerHTML = `
+      window.screen : ${window.screen.width}, ${window.screen.height}<br>
+      window.outer : ${window.outerWidth}, ${window.outerHeight}<br>
+      window.inner : ${window.innerWidth}, ${window.innerHeight}<br>
+      documentElement.clientWidth : ${document.documentElement.clientWidth}, ${document.documentElement.clientHeight}
+    `
+  }
+  
+  // window 이벤트를 등록하여 브라우저가 resize가 될때마다 업데이트가 되면서 콜백함수가 실행이 된다.
+  window.addEventListener('resize', () => {
+    updateTag();
+  });
+
+  updateTag(); // 1. update함수가 호출된다.
+
+  </script>
+
+</body>
+</html>
