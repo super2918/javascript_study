@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scroll APIs</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0; 
+    }
+    
+    .wrapper {
+      position: relative;
+      background: #000;
+    }
+    
+    .item {
+      width: 200px;
+      height: 200px;
+      border-radius: 2px;
+      background-color: blanchedalmond;
+    }
+
+    .item + .item {
+      margin-top: 2px;
+    }
+    
+    .bg-blue {
+      background:brown;
+    }
+
+    .btn-wrap {
+      position: fixed;
+      right: 20px;
+      top: 20px;
+    }
+
+    .btn-wrap button {
+      padding: 3px 10px;
+      border: 0;
+      background: white;
+      border-radius: 2px;
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="item-wrap">
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item scroll-item bg-blue"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
+
+    <div class="btn-wrap">
+      <button type="button" class="scroll-by">scroll by 100px(y)</button>
+      <button type="button" class="scroll-to">scroll to 100px(y)</button>
+      <button type="button" class="scroll-element">scroll into click-item</button>
+    </div>
+  </div>
+  <script>
+    // scroll 100px씩 스크롤
+    // scroll 100px된 부분에 이동
+    // 항상 click item으로 이동하는것
+
+  const scrollBy = document.querySelector('.scroll-by');
+  const scrollTo = document.querySelector('.scroll-to');
+  const scrollInto = document.querySelector('.scroll-element');
+  // const scrollItemY = document.querySelector('.scroll-item').offsetTop;
+  const scrollItemY = document.querySelector('.scroll-item');
+
+  // 100px이동
+  scrollBy.addEventListener('click', () => {
+    window.scrollBy({
+      top: 100,
+      left: 0,
+      behavior: 'smooth'
+    });
+  });
+  
+  // top으로부터 100px부터 시작
+  scrollTo.addEventListener('click', () => {
+    window.scrollTo(0, 100);
+  });
+
+  // 특정 위치로 이동
+  scrollInto.addEventListener('click', () => {
+    // window.scrollTo({
+    //   top: scrollItemY,
+    //   behavior: 'smooth'
+    // });
+    scrollItemY.scrollIntoView();
+  });
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>coordinates</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0; 
+    }
+    
+    .wrapper {
+      background: #000;
+    }
+    
+    .item {
+      width: 200px;
+      height: 200px;
+      border-radius: 2px;
+      background-color: blanchedalmond;
+    }
+
+    .item + .item {
+      margin-top: 2px;
+    }
+    
+    .bg-blue {
+      background:brown;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="item-wrap">
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item click-item bg-blue"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
+  </div>
+  <script>
+    // 클릭된 지점의  client X, Y and page X, Y 값 도출하기, getBoundingClientRect();
+    const itemWrap = document.querySelector('.item-wrap');
+    const item = document.querySelector('.click-item'); 
+    // const items = document.querySelectorAll('.item');
+
+
+    item.addEventListener('click', (event) => {
+      const rect = item.getBoundingClientRect();
+      console.log(`top: ${rect.top}, left: ${rect.left}, width: ${rect.width}, height: ${rect.height}`);
+      console.log(rect);
+      console.log(`Client X / Y : ${event.clientX}, ${event.clientX}`);
+      console.log(`Page X / Y : ${event.pageX}, ${event.pageY}`);
+    });
+
+
+    // 각각 item의 정보
+    // items.forEach((item) => {
+    //   const rect = item.getBoundingClientRect();
+    //     item.addEventListener('click', function(event) {
+    //     console.log(`top: ${rect.top}, left: ${rect.left}, width: ${rect.width}, height: ${rect.height}`);
+    //     console.log(rect);
+    //     console.log(`Client X / Y : ${event.clientX}, ${event.clientX}`);
+    //     console.log(`Page X / Y : ${event.pageX}, ${event.pageY}`);
+    //   });
+    // })
+
+  </script>
+</body>
+</html>
