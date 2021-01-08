@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scroll</title>
+    <style>
+      body {
+         background: #000;
+      }
+      
+      .wrapper {
+        text-align: center;
+      }
+
+      .item-wrap {
+        display: inline-block;
+      }
+
+      .rabbit {
+        padding-left: 80px;
+      }
+
+      .button-wrap {
+        padding: 20px 0;
+      }
+
+      .button {
+        position: relative;
+        padding: 8px 30px 8px 10px;
+        border: 0;
+        border-radius: 2px;
+        background: coral;
+        font-size: 15px;
+        color: white;
+        cursor: pointer;
+      }
+
+      .button::before {
+        content: '';
+        position: absolute;
+        width: 23px;
+        height: 23px;
+        top: 4px;
+        right: 6px;
+        background: url(../rabbits/img/rabbit.png) no-repeat center 0;
+        background-size: contain;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="button-wrap">
+        <button type="button" class="button">Find a rabbit</button>
+      </div>
+      <div class="item-wrap">
+        <div class="item"><img src="../rabbits/img/carrot.png" alt="carrot"></div>
+        <div class="item"><img src="../rabbits/img/carrot.png" alt="carrot"></div>
+        <div class="item"><img src="../rabbits/img/carrot.png" alt="carrot"></div>
+        <div class="item"><img src="../rabbits/img/carrot.png" alt="carrot"></div>
+        <div class="item"><img src="../rabbits/img/carrot.png" alt="carrot"></div>
+        <div class="item"><img src="../rabbits/img/carrot.png" alt="carrot"></div>
+        <div class="item"><img src="../rabbits/img/carrot.png" alt="carrot"></div>
+        <div class="item"><img src="../rabbits/img/carrot.png" alt="carrot"></div>
+        <div class="item rabbit"><img src="../rabbits/img/rabbit.png" alt="carrot"></div>
+        <div class="item"><img src="../rabbits/img/carrot.png" alt="carrot"></div>
+        <div class="item"><img src="../rabbits/img/carrot.png" alt="carrot"></div>
+        <div class="item"><img src="../rabbits/img/carrot.png" alt="carrot"></div>
+        <div class="item"><img src="../rabbits/img/carrot.png" alt="carrot"></div>
+      </div>
+    </div>
+    <script>
+      const $button = document.querySelector('button');
+      const $rabbitItem = document.querySelector('.rabbit');
+      
+      $button.addEventListener('click', () => {
+        $rabbitItem.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center'
+        });
+      });
+
+    </script>
+  </body>
+</html>
