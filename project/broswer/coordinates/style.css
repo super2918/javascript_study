@@ -10,6 +10,7 @@ body {
 .wrapper {
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 
 .corrdinates {
@@ -18,40 +19,47 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.corrdinates.show {
+  opacity: 1;
+  visibility: visible;
 }
 
 .target {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  width: 60px;
-  height: 60px;
+  width: 120px;
+  height: 120px;
   background: url(../coordinates/img/target.png) no-repeat center center;
+  transform: translate(-50%, -50%);
 }
 
-.target-line .line {
+.line {
   position: absolute;
-  display: block;
   background: white;
+  opacity: 0.5;
 }
 
-.target-line .line.vertical {
+.line.vertical {
   width: 1px;
   height: 100%;
-  top: 0;
   left: 50%;
 }
 
-.target-line .line.horizantal  {
+.line.horizontal  {
   width: 100%;
   height: 1px;
   top: 50%;
-  left: 0;
 }
 
 .target span {
   position: absolute;
+  min-width: 200px;
+  padding: 0 10px;
   left: 100%;
   bottom: 0;
   color: white;
