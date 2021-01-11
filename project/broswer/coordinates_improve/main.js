@@ -6,6 +6,9 @@
   const $corrdinatesInfo = document.querySelector('.target span');
   const $targetLineVertical = document.querySelector('.vertical');
   const $targetLinehorizontal = document.querySelector('.horizontal');
+  const $targetRect = $target.getBoundingClientRect();
+  const $targetHalfWidth = $targetRect.width / 2;
+  const $targetHalfHeight = $targetRect.height / 2;
 
 
   // game이 시작되면 좌표 구하는 함수 실행한다.
@@ -24,11 +27,9 @@
     let corrdinatesX = event.clientX;
     let corrdinatesY = event.clientY;
 
-    $target.style.top = `${corrdinatesY}px`;
-    $target.style.left = `${corrdinatesX}px`;
-
-    $targetLineVertical.style.left = `${corrdinatesX}px`;
-    $targetLinehorizontal.style.top = `${corrdinatesY}px`;
+    $target.style.transform = `translate(${corrdinatesX - $targetHalfWidth}px, ${corrdinatesY - $targetHalfHeight}px)`;
+    $targetLineVertical.style.transform = `translateX(${corrdinatesX}px)`;
+    $targetLinehorizontal.style.transform = `translateY(${corrdinatesY}px)`;
 
     $corrdinatesInfo.textContent = `corrdinates : ${corrdinatesX} * ${corrdinatesY}`;
   }
