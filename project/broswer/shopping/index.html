@@ -8,24 +8,22 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
 </head>
 <body>
-  <div class="ly-wrapper">
-    <div class="ly-header fixed">
-      <h1>shopping List</h1>
-    </div>
+  <div class="ly__wrapper">
+    <header class="ly__header fixed">LOGO</header>
     <div class="content">
-      <ul class="shopping-list">
-        <!-- <li class="item">
-          <p>shopping-list add</p>
-          <button type="button" class="button remove"><i class="fas fa-trash-alt"></i></button>
-        </li> -->
+      <ul class="items">
+        <li class="item item__row">
+          <span class="item__name">리스트 이름</span>
+          <button type="button" class="button item__delete"><i class="fas fa-minus-circle"></i></button>
+        </li>
       </ul>
     </div>
-    <div class="ly-navi fixed">
-      <div class="input-wrap">
-        <input type="text" class="input" placeholder="text..">
+    <footer class="ly__footer fixed">
+      <div class="form">
+        <input type="text" class="form__input" placeholder="text..">
+        <button type="button" class="button form__button add">확인</button>
       </div>
-      <button type="button" class="button confirm"><span class="hidden">확인</span></button>
-    </div>
+    </footer>
   </div>
 
   <script src="../shopping/js/index.js"></script>

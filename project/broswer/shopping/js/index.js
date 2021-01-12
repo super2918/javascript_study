@@ -19,7 +19,7 @@
     $shoppingList.append($item);
 
     const inputValue = $input.value;
-    $itemText.textContent += inputValue;
+    $itemText.textContent = inputValue;
 
     $removeButton.addEventListener('click', removeShoppingItem);
   }
@@ -48,7 +48,6 @@
       }
     });
 
-    // $comfirmButton.addEventListener('click', handleClickEvent);
   }
 
   init();
