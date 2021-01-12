@@ -26,7 +26,7 @@
  
   function removeShoppingItem(event) {
     const selector = event.target;
-    // selector.parentNode.parentNode.remove();
+    selector.closest('li').remove();
   }
 
   function getShoppingList() {
@@ -39,16 +39,16 @@
 
   function init() {
     // event 등록
-    // $input.addEventListener('keydown', (event) => {
-    //   const keycode = event.keyCode;
+    $input.addEventListener('keydown', (event) => {
+      const keycode = event.keyCode;
 
-    //   if(keycode === 13) {
-    //     getShoppingList();
-    //     $comfirmButton.addEventListener('click', handleClickEvent);    
-    //   }
-    // });
+      if(keycode === 13) {
+        getShoppingList();
+        $comfirmButton.addEventListener('click', handleClickEvent);    
+      }
+    });
 
-    $comfirmButton.addEventListener('click', handleClickEvent);
+    // $comfirmButton.addEventListener('click', handleClickEvent);
   }
 
   init();
