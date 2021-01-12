@@ -111,6 +111,7 @@ body {
 }
 
 .form__button {
+  width: 100%;
   padding: 10px 3px;
   color: white;
   font-size: 20px;
@@ -122,6 +123,7 @@ body {
 }
 
 .content .itmes {
+  height: 500px;
   overflow-y: scroll;
 }
 
@@ -139,15 +141,22 @@ body {
   line-height: 1.25;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+  cursor: pointer;
 }
 
 .content .item__row:hover {
   color: #4287f5;
 }
 
+.content .item + .item {
+  margin-top: 8px;
+}
+
 .content .item__delete {
   font-size: 16px;
   color: #eee;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .content .item__delete.active, .content .item__delete:hover {
