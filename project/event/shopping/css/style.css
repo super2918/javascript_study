@@ -1,0 +1,166 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  color: #666;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.fixed {
+  position: fixed;
+  left: 0;
+}
+
+.button {
+  display: inline-block;
+  background: transparent;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+}
+
+.ly__wrapper {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background: white;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.ly__header {
+  top: 0;
+  width: 100%;
+  height: 40px;
+  color: white;
+  font-size: 20px;
+  line-height: 40px;
+  background: #eeaeca;
+  background: -webkit-gradient(linear, left top, right top, from(#eeaeca), to(#94bbe9));
+  background: linear-gradient(90deg, #eeaeca 0%, #94bbe9 100%);
+}
+
+.ly__footer {
+  bottom: 0;
+  width: 100%;
+  background: #eeaeca;
+  background: -webkit-gradient(linear, left top, right top, from(#eeaeca), to(#94bbe9));
+  background: linear-gradient(90deg, #eeaeca 0%, #94bbe9 100%);
+}
+
+.form__input {
+  width: 100%;
+  height: 30px;
+  padding: 2px 20px;
+  background: white;
+  border: 0;
+  outline: none;
+  border-top: 1px solid #94bbe9;
+}
+
+.form__button {
+  width: 100%;
+  padding: 10px 3px;
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.content {
+  padding: 20px;
+}
+
+.content .itmes {
+  height: 500px;
+  overflow-y: scroll;
+}
+
+.content .item__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px 20px;
+  border-radius: 8px;
+  -webkit-box-shadow: 1px 3px 19px -8px rgba(0, 0, 0, 0.3);
+          box-shadow: 1px 3px 19px -8px rgba(0, 0, 0, 0.3);
+  line-height: 1.25;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.content .item__row:hover {
+  color: #4287f5;
+}
+
+.content .item + .item {
+  margin-top: 8px;
+}
+
+.content .item__delete {
+  font-size: 16px;
+  color: #eee;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.content .item__delete.active, .content .item__delete:hover {
+  color: tomato;
+  -webkit-transform: rotate(-90deg) scale(1.1);
+          transform: rotate(-90deg) scale(1.1);
+}

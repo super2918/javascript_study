@@ -1,0 +1,107 @@
+body {
+  color: #666;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.fixed {
+  position: fixed;
+  left: 0;
+}
+
+.button {
+  display: inline-block;
+  background: transparent;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+}
+
+.ly__wrapper {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background: white;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.ly__header {
+  top: 0;
+  width: 100%;
+  height: 40px;
+  color: white;
+  font-size: 20px;
+  line-height: 40px;
+  background: rgb(238,174,202);
+  background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+
+.ly__footer {
+  bottom: 0;
+  width: 100%;
+  background: rgb(238,174,202);
+  background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+
+.form {
+  &__input {
+    width: 100%;
+    height: 30px;
+    padding: 2px 20px;
+    background: white;
+    border: 0;
+    outline: none;
+    border-top: 1px solid rgba(148,187,233,1);
+  }
+
+  &__button {
+    width: 100%;
+    padding: 10px 3px;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+  }
+}
+
+.content {
+  padding: 20px;
+
+  .itmes {
+    height: 500px;
+    overflow-y: scroll;
+  }
+
+  .item {
+    &__row {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 20px;
+      border-radius: 8px;
+      box-shadow: 1px 3px 19px -8px rgba(0, 0, 0, 0.3);
+      line-height: 1.25;
+      transition: all 0.3s;
+      cursor: pointer;
+
+      &:hover {
+        color: #4287f5;
+      }
+    }
+
+    & + .item {
+      margin-top: 8px;
+    }
+
+    &__delete {
+      font-size: 16px;
+      color: #eee;
+      transition: all 0.3s;
+      
+      &.active,
+      &:hover {
+        color: tomato;
+        transform: rotate(-90deg) scale(1.1);
+      }
+    }
+  }
+}
